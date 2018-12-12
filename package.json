@@ -6,7 +6,8 @@
     "shell": "npm run build && firebase functions:shell",
     "start": "npm run shell",
     "deploy": "firebase deploy --only functions",
-    "logs": "firebase functions:log"
+    "logs": "firebase functions:log",
+    "lint": "eslint"
   },
   "main": "lib/index.js",
   "dependencies": {
@@ -15,6 +16,8 @@
     "firebase-functions": "^2.1.0"
   },
   "devDependencies": {
+    "eslint": "^5.10.0",
+    "tslint": "~5.8.0",
     "typescript": "~2.8.3"
   },
   "private": true

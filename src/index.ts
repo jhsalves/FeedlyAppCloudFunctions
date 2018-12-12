@@ -62,11 +62,11 @@ export const updateCommentsCount = functions.firestore.document('comments/{comme
         commentsCount ++;
 
         if(commentsCount >= 0){
-            await admin.firestore().collection("posts").doc(postId).update({
+            return admin.firestore().collection("posts").doc(postId).update({
                 "commentsCount": commentsCount
             });
-            return true;
         }
     }
-    return false;
+    return Promise.resolve(false);
 })
+
